@@ -1,0 +1,21 @@
+<div class="container">
+  <% if (alerts.error) { %>
+    <% alerts.error.forEach(function(msg) { %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% }) %>
+  <% } %>
+  <% if (alerts.success) { %>
+    <div class="alert alert-success"><%= alerts.success %></div>
+  <% } %>
+  <form action="/auth/login" method="POST">
+    <div class="form-group">
+      <label for="emailInput">Email address</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="passwordInput">Password</label>
+      <input type="password" class="form-control" id="passwordInput" placeholder="Password" name="password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
